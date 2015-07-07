@@ -62,6 +62,8 @@ public class ConnectFourClient {
                     //int temp = (int) (Math.random() * 7);
                     System.out.println(response);
                     out.println(response);
+                } else if(str.startsWith("Invalid")) {
+                    out.println((int)(Math.random() * 7));
                 }
                 // Send the response
 //                out.print(str);
@@ -69,7 +71,7 @@ public class ConnectFourClient {
             }
 //            remote.close();
         } catch (Exception e) {
-            System.out.println("Error: " + e);
+            e.printStackTrace();
         }
 
     }

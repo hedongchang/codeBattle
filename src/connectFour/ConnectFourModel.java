@@ -165,7 +165,7 @@ public class ConnectFourModel {
                 return symbol;
             }
         }
-        if (row >= 2 && column >= 3) {
+        if (row <= 2 && column <= 3) {
             for (int i = 0; i < 4; i++) {
                 if (inputData[row + i][column + i] == symbol) {
                     winCount++;
