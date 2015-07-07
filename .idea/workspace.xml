@@ -23,11 +23,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="WebServer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/WebServer.java">
+      <file leaf-file-name="WebClient.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/WebClient.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="44" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
+              <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="connectFourClient.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/connectFour/connectFourClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -35,12 +45,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="connectFourServer.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/connectFour/connectFourServer.java">
+      <file leaf-file-name="ConnectFourModel.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/connectFour/ConnectFourModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.11144131">
-              <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-              <folding />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#198#199#0" expanded="true" />
+                <element signature="e#260#261#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -64,6 +77,9 @@
       <list>
         <option value="$PROJECT_DIR$/src/Controller.java" />
         <option value="$PROJECT_DIR$/src/WebServer.java" />
+        <option value="$PROJECT_DIR$/src/connectFour/connectFourServer.java" />
+        <option value="$PROJECT_DIR$/src/connectFour/connectFourClient.java" />
+        <option value="$PROJECT_DIR$/src/connectFour/ConnectFourModel.java" />
       </list>
     </option>
   </component>
@@ -474,12 +490,12 @@
       <updated>1436289168965</updated>
       <workItem from="1436289172988" duration="637000" />
       <workItem from="1436289959388" duration="7000" />
-      <workItem from="1436296488151" duration="69000" />
+      <workItem from="1436296488151" duration="2178000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="713000" />
+    <option name="totallyTimeSpent" value="2822000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="28" y="23" width="1340" height="770" extended-state="0" />
@@ -553,11 +569,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/connectFour/connectFourServer.java">
+    <entry file="file://$PROJECT_DIR$/src/WebClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11144131">
-          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/connectFour/connectFourClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/connectFour/ConnectFourModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#198#199#0" expanded="true" />
+            <element signature="e#260#261#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
