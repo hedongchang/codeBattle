@@ -58,9 +58,10 @@ public class ConnectFourClient {
                     String rawSymbol = in.readLine();
                     String symbol = rawSymbol.replaceAll(".*\\[", "");
                     symbol = symbol.replaceAll("\\].*", "");
-                    int response = model.parseInput(grid, symbol);
-                    int temp = (int) (Math.random() * 7);
-                    out.println(temp);
+                    int response = model.makeMove(grid, symbol);
+                    //int temp = (int) (Math.random() * 7);
+                    System.out.println(response);
+                    out.println(response);
                 }
                 // Send the response
 //                out.print(str);
