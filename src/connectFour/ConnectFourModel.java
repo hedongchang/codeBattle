@@ -1,4 +1,7 @@
 package connectFour;
+
+import java.util.Arrays;
+
 /**
  * Created by hedon on 7/7/15.
  */
@@ -49,16 +52,30 @@ public class ConnectFourModel {
                 // simulate their move; for each col
                 for (int j = 0; j < GRID_WIDTH; j++) {
                     int enemyRow = 0;
-                    while (inputData[enemyRow][j] == 0) {
+                    while (enemyRow < GRID_HEIGHT - 1 && inputData[enemyRow][j] == 0) {
                         enemyRow++;
                     }
                     inputData[enemyRow][j] = theirSymbol;
-                    int resultMoveTwo = findWinner(i, enemyRow, ourSymbol);
+                    int resultMoveTwo = findWinner(j, enemyRow, ourSymbol);
                     if(resultMoveTwo == theirSymbol) {
                         // subtract 1000 for a loss
                         scores[i] -= 1000;
                     }
                     // no need to check if we won, we didn't move
+
+                    for(int k = 0; k < GRID_WIDTH; k++) {
+                        int ourRow = 0;
+                        while(ourRow < GRID_HEIGHT - 1 && inputData[ourRow][k] == 0) {
+                            ourRow++;
+                        }
+                        inputData[ourRow][k] = ourSymbol;
+                        int resultMoveThree = findWinner(k, ourRow, ourSymbol);
+                        if(resultMoveThree == ourSymbol) {
+                            scores[i] += 1000;
+                        }
+
+                        inputData[ourRow][k] = 0;
+                    }
 
                     // undo fake move
                     inputData[enemyRow][j] = 0;
@@ -73,21 +90,9 @@ public class ConnectFourModel {
                 max = i;
             }
         }
+        System.out.println("Scores: " + Arrays.toString(scores));
         return max;
-
-//        int column = 0;
-//        for (int j = 0; j < GRID_SIZE; j++) {
-//            int numInColumn = 0;
-//            for (int i = 0; i < GRID_SIZE; i++) {
-//                if (inputData[i][j] != 0) {
-//                    numInColumn++;
-//                }
-//            }
-//            if (numInColumn != GRID_SIZE - 1) {
-//                return j;
-//            }
-//        }
-//        return column;
+        
     }
     // i is row
     // j is column
