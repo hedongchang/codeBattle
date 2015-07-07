@@ -38,15 +38,14 @@ public class ConnectFourClient {
 
             BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
 
+            out.println("Martha?");
             String str = "";
             while(true) {
                 // the greeting
-
                 str = in.readLine();
+                // will print gameplay
                 System.out.println(str);
-                if(str.equals("EOT")) {
-                    out.print("Martha?");
-                } else if(str.startsWith("|")) {
+                if(str.startsWith("|")) {
                     // is part of the grid; get next 7 lines
                     String[] grid = new String[GRID_HEIGHT];
                     grid[0] = str;
@@ -59,7 +58,7 @@ public class ConnectFourClient {
                 }
                 // Send the response
 //                out.print(str);
-//                out.flush();
+                out.flush();
             }
 //            remote.close();
         } catch (Exception e) {
