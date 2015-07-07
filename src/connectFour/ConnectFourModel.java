@@ -12,19 +12,21 @@ public class ConnectFourModel {
     }
 
     public int makeMove(String[] input, String symbol) {
-        //parseInput(input);
+        parseInput(input);
         int column = 0;
-        for (int j = 1; j < GRID_SIZE; j++) {
+        for (int j = 0; j < GRID_SIZE; j++) {
             int numInColumn = 0;
-            for (int i = 0; i < GRID_SIZE; i++) {
+            for (int i = 1; i < GRID_SIZE; i++) {
                 if (inputData[i][j] != 0) {
                     numInColumn++;
                 }
             }
+            System.out.println(numInColumn);
             if (numInColumn != GRID_SIZE - 1) {
                 return j;
             }
         }
+        System.out.println(column);
         return column;
     }
 
@@ -34,11 +36,18 @@ public class ConnectFourModel {
         for (int i = 1; i < input.length; i++) {
             String toParse = input[i];
             String[] parsed = toParse.split("|");
-            for (int j = 0; j < parsed.length; j++) {
+           /* for (String parse: parsed) {
+                System.out.println(parse);
+            }*/
+           //s System.out.println(parsed.length);
+            int j = 0;
+            while (j <= GRID_SIZE) {
                 if (parsed[j].equals("O")) {
                     inputData[i][j] = 1;
-                } else {
+                } else if (parsed[j].equals("X")) {
                     inputData[i][j] = 2;
+                } else if (parsed.equals("|")) {
+                    j++;
                 }
             }
         }
