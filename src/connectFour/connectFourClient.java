@@ -27,6 +27,7 @@ public class ConnectFourClient {
      * it serves.
      */
     public static void main(String[] args) throws IOException {
+        ConnectFourModel model = new ConnectFourModel();
         Socket remote = new Socket("139.126.184.155", 9000);
         try {
             // wait for a connection
@@ -54,7 +55,12 @@ public class ConnectFourClient {
                         grid[i] = str;
                         System.out.println(str);
                     }
-//                    ConnectFourModel.parseInput(grid);
+                    String rawSymbol = in.readLine();
+                    String symbol = rawSymbol.replaceAll(".*\\[", "");
+                    symbol = symbol.replaceAll("\\].*", "");
+                    int response = model.parseInput(grid, symbol);
+                    int temp = (int) (Math.random() * 7);
+                    out.println(temp);
                 }
                 // Send the response
 //                out.print(str);
