@@ -27,6 +27,7 @@ public class ConnectFourClient {
      * it serves.
      */
     public static void main(String[] args) throws IOException {
+        ConnectFourModel model = new ConnectFourModel();
         Socket remote = new Socket("139.126.184.155", 9000);
         try {
             // wait for a connection
@@ -38,15 +39,14 @@ public class ConnectFourClient {
 
             BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
 
+            out.println("Martha?");
             String str = "";
             while(true) {
                 // the greeting
-
                 str = in.readLine();
+                // will print gameplay
                 System.out.println(str);
-                if(str.equals("EOT")) {
-                    out.print("Martha?");
-                } else if(str.startsWith("|")) {
+                if(str.startsWith("|")) {
                     // is part of the grid; get next 7 lines
                     String[] grid = new String[GRID_HEIGHT];
                     grid[0] = str;
@@ -55,11 +55,17 @@ public class ConnectFourClient {
                         grid[i] = str;
                         System.out.println(str);
                     }
-//                    ConnectFourModel.parseInput(grid);
+                    String rawSymbol = in.readLine();
+                    String symbol = rawSymbol.replaceAll(".*\\[", "");
+                    symbol = symbol.replaceAll("\\].*", "");
+                    int response = model.makeMove(grid, symbol);
+                    //int temp = (int) (Math.random() * 7);
+                    System.out.println(response);
+                    out.println(response);
                 }
                 // Send the response
 //                out.print(str);
-//                out.flush();
+                out.flush();
             }
 //            remote.close();
         } catch (Exception e) {
