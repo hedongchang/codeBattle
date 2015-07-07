@@ -39,20 +39,15 @@ public class WebServer {
                 // blank line signals the end of the client HTTP
                 // headers.
                 String str = ".";
-                while (!str.equals(""))
+                while (true) {
                     str = in.readLine();
-
-                // Send the response
-                // Send the headers
-                out.println("HTTP/1.0 200 OK");
-                out.println("Content-Type: text/html");
-                out.println("Server: Bot");
-                // this blank line signals the end of the headers
-                out.println("");
-                // Send the HTML page
-                out.println("<H1>Welcome to the Ultra Mini-WebServer</H2>");
-                out.flush();
-                remote.close();
+                    if (str == null) {
+                        System.exit(1);
+                    }
+                    out.println(str);
+                    System.out.println(str);
+                    out.flush();
+                }
             } catch (Exception e) {
                 System.out.println("Error: " + e);
             }
