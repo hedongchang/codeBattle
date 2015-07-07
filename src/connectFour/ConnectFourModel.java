@@ -12,9 +12,9 @@ public class ConnectFourModel {
     }
 
     public int makeMove(String[] input, String symbol) {
-        //parseInput(input);
+        parseInput(input);
         int column = 0;
-        for (int j = 1; j < GRID_SIZE; j++) {
+        for (int j = 0; j < GRID_SIZE; j++) {
             int numInColumn = 0;
             for (int i = 0; i < GRID_SIZE; i++) {
                 if (inputData[i][j] != 0) {
@@ -31,14 +31,24 @@ public class ConnectFourModel {
     // i is row
     // j is column
     private void parseInput(String[] input) {
-        for (int i = 1; i < input.length; i++) {
+        for (int i = 1; i < GRID_SIZE; i++) {
             String toParse = input[i];
             String[] parsed = toParse.split("|");
-            for (int j = 0; j < parsed.length; j++) {
-                if (parsed[j].equals("O")) {
+            String[] result = new String[7];
+            int index = 0;
+            for (String res: parsed) {
+                if (res.equals("O") || res.equals("X") || res.equals(" ")) {
+                    result[index] = res;
+                    index++;
+                }
+            }
+            for (int j = 0; j < result.length; j++) {
+                if (result[j].equals("O")) {
                     inputData[i][j] = 1;
-                } else {
+                } else if (result[j].equals("X")) {
                     inputData[i][j] = 2;
+                } else if (result[j].equals(" ")) {
+                    inputData[i][j] = 0;
                 }
             }
         }
